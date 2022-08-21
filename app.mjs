@@ -11,7 +11,7 @@ const app=express();
 mongoose.connect(keys.mongodb.dbURL,()=>{
     console.log('connected to mongodb')
 })
-//use to encrypt and decrypt the session cookie
+//use to encrypt and decrypt the session cookie usong the key.
 app.use(cookieSession({
     maxAge: 24 * 60 *60* 1000,
     keys:[keys.session.cookieKey]
